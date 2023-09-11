@@ -2,7 +2,7 @@ import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducer from './modules'
+import rootReducer from './stores'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 

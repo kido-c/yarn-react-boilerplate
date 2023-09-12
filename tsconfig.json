@@ -11,7 +11,11 @@
     "strict": true,
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": { "@/pages/*": ["src/pages/*"] },
+    "paths": {
+      "@/pages/*": ["src/pages/*"],
+      "@/components/*": ["src/components/*"],
+      "@/stores/*": ["src/stores/*"]
+    },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   }

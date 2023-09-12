@@ -12,6 +12,7 @@ module.exports = {
   },
   resolve: {
     // 웹팩이 해석할 확장자
+    // ts, tsx 추가
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.css'],
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -31,10 +32,13 @@ module.exports = {
     // 서버 시작 후 바로 브라우를 열 것인지 정함
     open: true,
     client: {
+      // [browser log 표시]
+      // 현재 아무표시 안함.
+      logging: 'none',
       // 컴파일 과정 퍼센티지로 브라우저에 보여줌
-      progress: false,
+      // progress: false,
       // 컴파일 에러 또는 경고시에 브라우저에 풀스크린으로 보여줌
-      overlay: false,
+      // overlay: false,
     },
   },
   // 번들링 된 결과물을 어디다 둘 것인지에 대한 설정
@@ -47,6 +51,7 @@ module.exports = {
   module: {
     rules: [
       {
+        // ts, tsx 추가
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: '/node_modules/',
         loader: 'babel-loader',
@@ -70,8 +75,11 @@ module.exports = {
     ],
   },
   plugins: [
-    new RefreshWebpackPlugin(),
+    // 새로 빌드 했을 때 이전 빌드내용 자동으로 삭제
     new CleanWebpackPlugin(),
+    // 코드 변경 사항 브라우저에 새로고침 자동으로 반영
+    new RefreshWebpackPlugin(),
+
     new HtmlWebpackPlugin({
       // 번들링된 JS를 주입하고 결과물을 옮길 대상이 되는 파일을 지정
       template: './public/index.html',

@@ -31,6 +31,8 @@ module.exports = {
     hot: 'only',
     // 서버 시작 후 바로 브라우를 열 것인지 정함
     open: true,
+    //  요청된 모든 경로에 대해 항상 index.html 파일을 제공하도록 설정
+    historyApiFallback: true,
     client: {
       // [browser log 표시]
       // 현재 아무표시 안함.

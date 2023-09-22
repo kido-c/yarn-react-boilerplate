@@ -15,5 +15,26 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "react"],
-  "rules": {}
+  "rules": {
+    // off: 해제, warn: 경고, error: 에러
+    "react/react-in-jsx-scope": "off",
+    "spaced-comment": "warn", // 주석 작성 시 첫 문장 띄어쓰기 안할 시 경고
+    "no-duplicate-imports": "error", // 중복 import 시 에러
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ], // 확장자로 js와 jsx ts tsx 허용하도록 수정
+    "no-console": "warn", // 콘솔을 쓰면 경고
+    "react-hooks/exhaustive-deps": "off", // hooks의 의존성배열이 충분하지 않을때 강제로 의존성을 추가하는 규칙을 완화
+    "react/jsx-props-no-spreading": ["warn", { "custom": "ignore" }], // props spreading을 허용하지 않는 규칙 해제
+    "linebreak-style": "off",
+    "no-use-before-define": "off", // 라인 상 선언 전에 사용하는 것에 대한 에러 해제
+    "import/no-unresolved": "off", // ts 절대경로 설정 시 발생하는 충돌 해결 lint 조건
+    "no-shadow": "error", // 외부에 선언엔 동일한 변수명 사용 시 에러
+
+    "@typescript-eslint/no-explicit-any": "warn", // any 타입 지정 시 경고
+
+    "no-unused-vars": "warn", // 사용하지 않는 변수가 있을때 경고
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
 }
